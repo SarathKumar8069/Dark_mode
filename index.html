@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Light Mode</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .light-mode {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .toggle-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #444;
+      color: white;
+    }
+
+    .light-mode .toggle-button {
+      background-color: #ddd;
+      color: #000;
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <div class="container">
+    <button class="toggle-button" onclick="toggleMode()">Switch to Dark Mode</button>
+    <h1>Hello! This is Light Mode</h1>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.querySelector('.toggle-button');
+      const h1 = document.querySelector('h1');
+
+      if (body.classList.contains('light-mode')) {
+        body.classList.replace('light-mode', 'dark-mode');
+        btn.textContent = 'Switch to Light Mode';
+        h1.textContent = 'Hello! This is Dark Mode';
+      } else {
+        body.classList.replace('dark-mode', 'light-mode');
+        btn.textContent = 'Switch to Dark Mode';
+        h1.textContent = 'Hello! This is Light Mode';
+      }
+    }
+  </script>
+</body>
+</html>
